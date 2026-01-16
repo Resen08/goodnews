@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginform{
+    padding: 1em;
+    height: 20em;
+    width: 80em;
+    text-align: center;
+    background-color: lightgray;
+    border: 20px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
+}
+
+input{
+    background-color: lightgray;
+}
