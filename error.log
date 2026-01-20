@@ -1,0 +1,1 @@
+[Tue Jan 20 09:36:47.470842 2026] [php:warn] [pid 202346] [client 192.168.122.32:56369] PHP Warning:  filter_input(): Unknown filter with ID 8 in /var/www/html/courses/bg24c/bg24c_u005/php/login.php on line 11, referer: http://listschule/courses/bg24c/bg24c_u005/
