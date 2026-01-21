@@ -21,12 +21,14 @@ class DatabaseConnection{
     public function login($user, $pass){
         $stmt = "SELECT pass From userDB WHERE user='".$user."'";
         $result = $this->db->query($stmt);
-        
-        if ($row = $result->fetch_assoc() || $row['pass']=$pass) {
-            return true;
-        }else {
-            return false;
+        $hashpass = password_hash($pass, PASSWORD_DEFAULT);
+
+        if ($result && $row = $result->fetch_assoc()) {
+            if (password_verify($pass, $row['pass'])) {
+                return true;
+            }
         }
+        return false;
     }
 
 }
