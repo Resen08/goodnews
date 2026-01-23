@@ -11,7 +11,7 @@ body{
     min-width: 100vw;
     justify-content: center;
     align-items: left;
-    flex-direction: column;
+    flex-direction:column;
 
 }
 
@@ -45,4 +45,15 @@ input{
 
 h2{
     font-size: 3.5em;
+}
+
+.test_panel{
+    height: 40em;
+    width: 60em;
+    text-align: center;
+    background-color: white;
+    border: 5px solid transparent;
+    /* filter: drop-shadow(0 0 6rem #7F00FF); */
+    filter: drop-shadow(0 0 3rem black );
+    border-radius: 20px;
 }

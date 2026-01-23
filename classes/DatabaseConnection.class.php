@@ -21,7 +21,6 @@ class DatabaseConnection{
     public function login($user, $pass){
         $stmt = "SELECT pass From userDB WHERE user='".$user."'";
         $result = $this->db->query($stmt);
-        $hashpass = password_hash($pass, PASSWORD_DEFAULT);
 
         if ($result && $row = $result->fetch_assoc()) {
             if (password_verify($pass, $row['pass'])) {

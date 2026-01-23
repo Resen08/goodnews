@@ -2,8 +2,8 @@
 
 class HTMLPage{
 
-public function head($title){
-    return '<!DOCTYPE html>
+public function head($title){   
+    $html= '<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -14,6 +14,8 @@ public function head($title){
     <body>
         <div class="container">
     ';
+
+    return $html;
 }
 
 public function foot(){
