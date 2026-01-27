@@ -1,6 +1,9 @@
 body{
-    background: rgb(63,94,251);
-    background: linear-gradient(66deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background:
+        linear-gradient(#FF2E2e, transparent),
+        linear-gradient(to top left, violet, transparent),
+        linear-gradient(to top right, darkblue, transparent);
+    background-blend-mode: screen;
     font-family:Arial, Helvetica, sans-serif;
     background-attachment: fixed;
 }
@@ -9,23 +12,54 @@ body{
     display: flex;
     min-height: 100vh;
     min-width: 100vw;
+<<<<<<< Updated upstream
     justify-content: center;
     align-items: left;
     flex-direction:column;
 
+=======
+    justify-content: start;
+    align-items: center;
+    flex-direction: row
+>>>>>>> Stashed changes
 }
 
 #loginform{
     height: 40em;
-    width: 30em;
+    width: 28em;
     text-align: center;
     background-color: white;
     border: 5px solid transparent;
     /* filter: drop-shadow(0 0 6rem #7F00FF); */
     filter: drop-shadow(0 0 3rem black );
     border-radius: 20px;
-    margin-left: 20rem;
+    margin-left: 10rem;
+    order: 0;
+        margin-top: 5rem;
+
 }
+
+#info{
+    height: 30em;
+    width: 50em;
+    text-align: center;
+    background-color: white;
+    border: 5px solid transparent;
+    /* filter: drop-shadow(0 0 6rem #7F00FF); */
+    filter: drop-shadow(0 0 3rem black);
+    filter: blur(3px);
+    border-radius: 4px;
+    margin-left: 7rem;
+    margin-top: 5rem;;
+    order: 1;
+}
+
+#info img{
+    height: 30em;
+    width: 50em;
+    object-fit: fill;
+}
+
 
 input{
     text-align: center;
@@ -33,7 +67,7 @@ input{
     background-color: #F5F5F5;
     height: 2em;
     width: 20em;
-    border-radius: 12px;
+    border-radius: 7px;
 }
 
 #senden{

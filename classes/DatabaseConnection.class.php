@@ -3,8 +3,6 @@
 class DatabaseConnection{
 
     private $db;
-    private $home = false;
-
     const DBUSERSCHOOL = 'bg24c_u005';
     const DBPASSSCHOOL = '258503';
 

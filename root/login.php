@@ -5,6 +5,7 @@ include_once('../classes/DatabaseConnection.class.php');
  $dbc = new DatabaseConnection();
 
 if ($dbc->login(filter_input(INPUT_POST, "user", FILTER_SANITIZE_STRING), filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING))) {
+<<<<<<< Updated upstream
     print "Sie sind eingeloggt!";
     session_unset();
     $_SESSION['Loggedin'] = true;
@@ -17,4 +18,12 @@ if ($dbc->login(filter_input(INPUT_POST, "user", FILTER_SANITIZE_STRING), filter
     session_unset();
     header("location:../index.php?error=true");
     exit;
+=======
+    session_unset();
+    $_SESSION['token'] = "Du bist eingeloggt";
+    header("Location: ../root/dashboard.php");
+} else {
+    session_unset();
+    header("Location: ../index.php?login=failed");
+>>>>>>> Stashed changes
 }
