@@ -10,9 +10,7 @@ include ('../classes/News.class.php');
 
 $html = new HTMLPage();
 $news = new News();
-
+$user = $_SESSION['username'];
 print $html->head('Good News');
-
-print $news->makePost();
-
+print $news->getHeader($user);
 print $html->foot();

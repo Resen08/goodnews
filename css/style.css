@@ -6,22 +6,17 @@ body{
     background-blend-mode: screen;
     font-family:Arial, Helvetica, sans-serif;
     background-attachment: fixed;
+    margin: 0;
+    padding: 0;
 }
 
 .container{
     display: flex;
     min-height: 100vh;
     min-width: 100vw;
-<<<<<<< Updated upstream
-    justify-content: center;
-    align-items: left;
-    flex-direction:column;
-
-=======
     justify-content: start;
     align-items: center;
     flex-direction: row
->>>>>>> Stashed changes
 }
 
 #loginform{
@@ -35,7 +30,7 @@ body{
     border-radius: 20px;
     margin-left: 10rem;
     order: 0;
-        margin-top: 5rem;
+    margin-top: 1rem;
 
 }
 
@@ -50,7 +45,7 @@ body{
     filter: blur(3px);
     border-radius: 4px;
     margin-left: 7rem;
-    margin-top: 5rem;;
+    margin-top: 1rem;;
     order: 1;
 }
 
@@ -93,10 +88,35 @@ h2{
 }
 
 header{
-    height: 20em;
+    height: 10em;
     width: 100%;
     background-image: url('../img/Postheader.jpg');
     background-size: cover;
     background-position: center;
+    background-position-y:35%;
     background-repeat: no-repeat;
+}
+
+.welcomeHeader{
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    padding-top: 1rem;
+    margin-left: 1.5rem;
+    font-size: 3rem;
+
+}
+
+.userPanel{
+    height: 1.5em;
+    width: 100%;
+    background-color: #F5F5F5;
+    margin-top: 0;
+    background-color: gainsboro;
+    filter: drop-shadow(0 0 3rem black );
+    display: block;
+}
+
+.userPanel h3{
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
 }
