@@ -12,7 +12,6 @@ print "     <section id='loginform'><br>
                 </form>
             </section>
             <div id='test_panel'>
-
             </div>
 ";
 
