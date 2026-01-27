@@ -1,7 +1,7 @@
 body{
     background:
-        linear-gradient(#FF2E2e, transparent),
-        linear-gradient(to top left, violet, transparent),
+        linear-gradient(darkgray, transparent),
+        linear-gradient(to top left, skyblue, transparent),
         linear-gradient(to top right, darkblue, transparent);
     background-blend-mode: screen;
     font-family:Arial, Helvetica, sans-serif;
