@@ -27,10 +27,15 @@ body{
     border: 5px solid transparent;
     /* filter: drop-shadow(0 0 6rem #7F00FF); */
     filter: drop-shadow(0 0 3rem black );
-    border-radius: 20px;
+    border-radius: 10px;
     margin-left: 10rem;
     order: 0;
     margin-top: 1rem;
+
+}
+
+#loginform a{
+    color: black;
 
 }
 
@@ -42,7 +47,6 @@ body{
     border: 5px solid transparent;
     /* filter: drop-shadow(0 0 6rem #7F00FF); */
     filter: drop-shadow(0 0 3rem black);
-    filter: blur(3px);
     border-radius: 4px;
     margin-left: 7rem;
     margin-top: 1rem;;
@@ -53,6 +57,14 @@ body{
     height: 30em;
     width: 50em;
     object-fit: fill;
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+#info img:hover{
+    height: 30em;
+    width: 50em;
+    filter: blur(0px);
 }
 
 
