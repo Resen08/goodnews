@@ -57,3 +57,12 @@ h2{
     filter: drop-shadow(0 0 3rem black );
     border-radius: 20px;
 }
+
+header{
+    height: 20em;
+    width: 100%;
+    background-image: url('../img/Postheader.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
