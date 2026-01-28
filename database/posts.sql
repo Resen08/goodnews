@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 26-01-27 20:32
+-- 생성 시간: 26-01-29 00:16
 -- 서버 버전: 10.4.32-MariaDB
 -- PHP 버전: 8.0.30
 
@@ -33,7 +33,7 @@ CREATE TABLE `posts` (
   `content` text NOT NULL,
   `created` datetime NOT NULL,
   `uid` int(11) NOT NULL,
-  `parent_id` int(11) NOT NULL
+  `parent_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -41,7 +41,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`pid`, `title`, `content`, `created`, `uid`, `parent_id`) VALUES
-(0, 'TEST', 'TEST', '2026-01-27 20:28:49', 0, 0);
+(0, 'First Commit', 'apodjfpqhefpoiqhefpoqhedfhqpodfhqoipdfhpqehfpoqwhefiopqwhepfohqewiofhqwiopdfhpoiqewhfpoiqwehofiphqweopfhpqwoehfoiqwh', '2026-01-28 23:13:47', 0, NULL),
+(1, 'Second Commit', 'adsofhqpoebfqpuubdvpcihxvpzhcxvpizohcxpofiandpoifnadopsfinasdpofihasdpofhpaonrpofinepoihfaopewhfopiahe79812hffdnov', '2026-01-28 23:16:13', 0, NULL),
+(2, 'First Commit of First Commit', 'a;daslkfjalskdjfpadsohfpoawebfpqoibvpiqbepovbqpodvbpqowebdvpoib epovbqpeoaifd', '2026-01-28 23:57:03', 0, 0);
 
 --
 -- 덤프된 테이블의 인덱스
