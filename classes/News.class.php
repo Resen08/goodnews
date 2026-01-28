@@ -10,13 +10,28 @@ class News{
     }
 
     public function getHeader($username){
-        print "
-            <header>
-                <div class='welcomeHeader'><h1 class='welcomeHeader'>Welcome to the Good News Dashboard</h1></div>
-            </header>
+        $head = "
+        <div class='panelcontainer'>
+            <div class='postPanel'>
+                <div class='postHeader'>
+                    <h3>Willkommen in Good-Post</h3>
+                </div>
+                <div class='postUpload'>
+                </div>";
+
+        
+
+        $head .= "</div>
             <div class='userPanel'>
-                <h3 class='userPanel'> Hello, ".$username."</h3>
+                <h1>Home</h1>
+                <h3> Hello, ".$username."</h3>
             </div>
+        </div>
         ";
+    
+        return print $head; 
     }
 }
+
+                // <div class='postUploaded'>
+                // </div>
