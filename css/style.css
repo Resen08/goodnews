@@ -156,11 +156,43 @@ h2{
     height: 100%;
     width: 80%;
     background: white;
-    margin-top: 4rem;
-
+    margin-top: 2rem;
+    color: black;
     border-radius: 5px;
     padding: 1rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    text-align: left;
+
+}
+
+.postUploaded, span{
+    word-wrap: break-word;
+    font-size: 1.2rem;
+}
+
+.postuploadedHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-starts;
+    flex-direction: row;
+}
+
+.uploader{
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-right: 2px solid gray;
+    padding-right: 0.5rem;
+
+}
+
+.postTitle{
+    color: #282727;
+    font-size: 1rem;    
+}
+
+.created{
+    color: gray;
+    font-size: 1rem;    
 }
 
 .userPanel{
