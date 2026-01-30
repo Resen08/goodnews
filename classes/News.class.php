@@ -16,67 +16,50 @@ class News{
                 <div class='postHeader'>
                     <h3>Willkommen in Good-Post</h3>
                 </div>
-                <div class='postUpload'>
-                </div>";
+                ";
+    
+        return $head; 
+    }
 
-        $postStmt = "SELECT * FROM posts WHERE parent_id IS NULL";
+    public function getPost(){
+        //post
+        $postStmt = "SELECT * FROM posts JOIN userDB using ( uid ) WHERE parent_id IS NULL";
         $post = $this->db->query($postStmt);
-        while($post && $row = $post->fetch_assoc()){
+        while($post && $row_post = $post->fetch_assoc()){
             $head .= "
                     <div class='postUploaded'>
                         <div class='postuploadedHeader'>
                             <div class='postLeft'>
-                    ";
-
-                    $userStmt = "SELECT user From userDB WHERE uid='$row[uid]'";
-                    $user = $this->db->query($userStmt);
-                    while($user && $rows = $user->fetch_assoc()){
-                    $head .="
-                            <span class='uploader'>".$rows['user']."</span>
-                        ";
-                    }
-
-            $head .="
-                                <span class='postTitle'>".$row['title']." </span>
+                                <span class='uploader'>".$row_post['user']."</span>
+                                <span class='postTitle'>".$row_post['title']." </span>
                             </div>
                             <div class='postRight'>
-                                <span class='created'> ".$row['created']." </span>
+                                <span class='created'> ".$row_post['created']." </span>
                             </div>
                         </div>
                         <br>
-                        <span class='postContent'>".$row['content']."</span>
-                        <br><br><h3>Kommentare:</h3>
+                        <span class='postContent'>".$row_post['content']."</span>
+                    <br><br><h3>Kommentare:</h3>
             ";
 
-            $kommentstmt = "SELECT * FROM posts WHERE parent_id='$row[pid]'";
-            $kom = $this->db->query($kommentstmt);
-            while($kom && $rowss = $kom->fetch_assoc()){
+            //Kommentare
+            $kommentStmt = "SELECT * FROM posts JOIN userDB using ( uid ) WHERE parent_id='$row_post[pid]'";
+            $kom = $this->db->query($kommentStmt);
+            while($kom && $row_kom = $kom->fetch_assoc()){
                 $head .="
                     <div class='kommentare'>                        
                         <div class='postuploadedHeader'>
                             <div class='postLeft'>
-                    ";
-                $kommentuserstmt = "SELECT user From userDB WHERE uid='$rowss[uid]'";
-                $komuser = $this->db->query($kommentuserstmt);
-                while($komuser && $rowsss = $komuser->fetch_assoc()){
-                    $head .="
-                                <span class='uploader'>".$rowsss['user']."</span>
-                            ";
-                }
-                $head .="
-                                    <span class='postTitle'>".$rowss['title']." </span>
-                                </div>
-                                <div class='postRight'>
-                                    <span class='created'> ".$rowss['created']." </span>
-                                </div>
+                                <span class='uploader'>".$row_kom['user']."</span>
+                                <span class='postTitle'>".$row_kom['title']." </span>
                             </div>
-                            <br>
-                            <span class='postContent'>".$rowss['content']."</span>
-                            
-                ";
-
-
-                $head .="</div>";
+                            <div class='postRight'>
+                                <span class='created'> ".$row_kom['created']." </span>
+                            </div>
+                        </div>
+                        <br>
+                        <span class='postContent'>".$row_kom['content']."</span>
+                    </div>";
             }
 
             $head .="
@@ -85,18 +68,19 @@ class News{
                 ";
         }
 
+        return $head;
+    }
 
-        $head .= "</div>
+    public function footheader($username){
+        return $head = "</div>
             <div class='userPanel'>
                 <h1>Home</h1>
                 <h3> Hello, ".$username."</h3>
             </div>
         </div>
         ";
-    
-        return print $head; 
-    }
-}
 
-                // <div class='postUploaded'>
-                // </div>
+
+    }
+
+}

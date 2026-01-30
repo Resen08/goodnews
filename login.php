@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once('../classes/DatabaseConnection.class.php');
+include_once('classes/DatabaseConnection.class.php');
 $dbc = new DatabaseConnection();
 
 $_SESSION['user'] = filter_input(INPUT_POST, "user", FILTER_SANITIZE_STRING);

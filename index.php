@@ -7,7 +7,7 @@ print '
         <div class="container">
             <section id="loginform"><br>
                 <h2>Good News</h2>
-                <form action="root/login.php" method="POST">
+                <form action="login.php" method="POST">
                     <p><input type="text" id="user" name="user" placeholder="Benutzername"></p>
                     <p><input type="password" id="password" name="password" placeholder="Passwort"></p>
                     <p><input type="submit" id="senden" name="senden" value="login"></p>
