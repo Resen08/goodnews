@@ -173,7 +173,7 @@ h2{
 .postuploadedHeader{
     display: flex;
     justify-content: space-between;
-    align-items: flex-starts;
+    align-items: center;
     flex-direction: row;
 }
 
@@ -195,10 +195,16 @@ h2{
     font-size: 1rem;    
 }
 
+.postContent{
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid gray;
+
+}
+
 .kommentare{
     height: 100%;
     width: 100%;
-    border-top: 2px solid gray;
     color: black;
     margin-top: 1rem;
     padding-top: 0.5rem;}

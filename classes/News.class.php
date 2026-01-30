@@ -2,6 +2,7 @@
 
 class News{
     private $db;
+    private $head;
 
     public function __construct(){
         include_once('DatabaseConnection.class.php');
@@ -21,53 +22,32 @@ class News{
         return $head; 
     }
 
-    public function getPost(){
-        //post
-        $postStmt = "SELECT * FROM posts JOIN userDB using ( uid ) WHERE parent_id IS NULL";
-        $post = $this->db->query($postStmt);
-        while($post && $row_post = $post->fetch_assoc()){
+    public function getPost($parent_id=null){
+        if ($parent_id == null) {
+            $stmt = "SELECT * FROM posts JOIN userDB using ( uid ) WHERE parent_id IS NULL";
+        } else {
+            $stmt = "SELECT * FROM posts JOIN userDB using ( uid ) WHERE parent_id='$parent_id'";
+        }
+        $post = $this->db->query($stmt);
+        while($row = $post->fetch_assoc()){
             $head .= "
                     <div class='postUploaded'>
                         <div class='postuploadedHeader'>
                             <div class='postLeft'>
-                                <span class='uploader'>".$row_post['user']."</span>
-                                <span class='postTitle'>".$row_post['title']." </span>
+                                <span class='uploader'>".$row['user']."</span>
+                                <span class='postTitle'>".$row['title']." </span>
                             </div>
                             <div class='postRight'>
-                                <span class='created'> ".$row_post['created']." </span>
+                                <span class='created'> ".$row['created']." </span>
                             </div>
                         </div>
-                        <br>
-                        <span class='postContent'>".$row_post['content']."</span>
-                    <br><br><h3>Kommentare:</h3>
+                        <div class='postContent'>".$row['content']."</div>
             ";
-
-            //Kommentare
-            $kommentStmt = "SELECT * FROM posts JOIN userDB using ( uid ) WHERE parent_id='$row_post[pid]'";
-            $kom = $this->db->query($kommentStmt);
-            while($kom && $row_kom = $kom->fetch_assoc()){
-                $head .="
-                    <div class='kommentare'>                        
-                        <div class='postuploadedHeader'>
-                            <div class='postLeft'>
-                                <span class='uploader'>".$row_kom['user']."</span>
-                                <span class='postTitle'>".$row_kom['title']." </span>
-                            </div>
-                            <div class='postRight'>
-                                <span class='created'> ".$row_kom['created']." </span>
-                            </div>
-                        </div>
-                        <br>
-                        <span class='postContent'>".$row_kom['content']."</span>
-                    </div>";
-            }
-
-            $head .="
-                        
-                    </div>
-                ";
+            $head .= $this->getPost($row['pid']);
+            $head .=" 
+                </div>
+            ";
         }
-
         return $head;
     }
 
